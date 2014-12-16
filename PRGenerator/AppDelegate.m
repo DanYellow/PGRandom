@@ -17,6 +17,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    ViewController *viewController = [[ViewController alloc] init];
+    
+    UINavigationController *mainNavController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    [mainNavController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    mainNavController.navigationBar.shadowImage = [UIImage new];
+    mainNavController.navigationBar.translucent = YES;
+    mainNavController.navigationBar.tintColor = [UIColor whiteColor];
+
+    self.window.rootViewController = mainNavController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

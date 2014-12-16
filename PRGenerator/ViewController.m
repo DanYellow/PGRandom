@@ -42,6 +42,8 @@
     [validChoiceButton setImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
     validChoiceButton.backgroundColor = [UIColor clearColor];
     [self.view addSubview:validChoiceButton];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(appearsSearchBar)];
 
     
     self.contributorsList = [@[@"Pikachu", @"Bulbizarre", @"Carapuce", @"Salamèche"] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
@@ -90,6 +92,9 @@
     [self.view addSubview:self.receiverShineLabel];
 }
 
+- (void) pushAddNewContributorsView {
+    NSLog(@"GENTOO");
+}
 
 - (void) getRandomUser
 {
