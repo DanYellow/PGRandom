@@ -43,7 +43,7 @@
     validChoiceButton.backgroundColor = [UIColor clearColor];
     [self.view addSubview:validChoiceButton];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(appearsSearchBar)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAddNewContributorsView)];
 
     
     self.contributorsList = [@[@"Pikachu", @"Bulbizarre", @"Carapuce", @"Salamèche"] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
@@ -92,8 +92,10 @@
     [self.view addSubview:self.receiverShineLabel];
 }
 
-- (void) pushAddNewContributorsView {
-    NSLog(@"GENTOO");
+- (void) pushAddNewContributorsView
+{
+    AddContributorViewController *addContributorViewController = [AddContributorViewController new];
+    [self.navigationController pushViewController:addContributorViewController animated:YES];
 }
 
 - (void) getRandomUser
