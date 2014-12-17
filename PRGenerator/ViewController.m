@@ -94,7 +94,8 @@
 
 - (void) pushAddNewContributorsView
 {
-    AddContributorViewController *addContributorViewController = [AddContributorViewController new];
+    ContributorsListViewController *addContributorViewController = [ContributorsListViewController new];
+    
     [self.navigationController pushViewController:addContributorViewController animated:YES];
 }
 

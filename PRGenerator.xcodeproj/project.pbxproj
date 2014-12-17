@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A14C3DF1A40FC7A009B1813 /* AddContributorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A14C3DE1A40FC7A009B1813 /* AddContributorViewController.m */; };
+		1A14C3DF1A40FC7A009B1813 /* ContributorsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A14C3DE1A40FC7A009B1813 /* ContributorsListViewController.m */; };
 		1A1A87791A3E0297003F6D9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A87781A3E0297003F6D9A /* main.m */; };
 		1A1A877C1A3E0297003F6D9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A877B1A3E0297003F6D9A /* AppDelegate.m */; };
 		1A1A877F1A3E0297003F6D9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A877E1A3E0297003F6D9A /* ViewController.m */; };
@@ -18,6 +18,7 @@
 		1A1A87A11A3E1090003F6D9A /* PRGenerator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A87A01A3E1090003F6D9A /* PRGenerator@2x.png */; };
 		1A1A87A41A3E123E003F6D9A /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A87A21A3E123E003F6D9A /* check@2x.png */; };
 		1A1A87A51A3E123E003F6D9A /* PRGicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A87A31A3E123E003F6D9A /* PRGicon@2x.png */; };
+		1ADE5EBE1A422C09007190ED /* AddNewContributorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE5EBD1A422C09007190ED /* AddNewContributorViewController.m */; };
 		EF46E9D55369ECE4654B21AF /* libPods-PRGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB1E7787CD4A227F4C23E66 /* libPods-PRGenerator.a */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A14C3DD1A40FC7A009B1813 /* AddContributorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContributorViewController.h; sourceTree = "<group>"; };
-		1A14C3DE1A40FC7A009B1813 /* AddContributorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContributorViewController.m; sourceTree = "<group>"; };
+		1A14C3DD1A40FC7A009B1813 /* ContributorsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContributorsListViewController.h; sourceTree = "<group>"; };
+		1A14C3DE1A40FC7A009B1813 /* ContributorsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContributorsListViewController.m; sourceTree = "<group>"; };
 		1A1A87731A3E0297003F6D9A /* PRGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PRGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1A87771A3E0297003F6D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A1A87781A3E0297003F6D9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,6 +51,8 @@
 		1A1A87A01A3E1090003F6D9A /* PRGenerator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PRGenerator@2x.png"; sourceTree = "<group>"; };
 		1A1A87A21A3E123E003F6D9A /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		1A1A87A31A3E123E003F6D9A /* PRGicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PRGicon@2x.png"; sourceTree = "<group>"; };
+		1ADE5EBC1A422C09007190ED /* AddNewContributorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewContributorViewController.h; sourceTree = "<group>"; };
+		1ADE5EBD1A422C09007190ED /* AddNewContributorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewContributorViewController.m; sourceTree = "<group>"; };
 		3DB1E7787CD4A227F4C23E66 /* libPods-PRGenerator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PRGenerator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		774183905447A08104667F2B /* Pods-PRGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRGenerator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PRGenerator/Pods-PRGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 		A3FF37420CDFCFA09859B1B6 /* Pods-PRGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-PRGenerator/Pods-PRGenerator.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,8 +104,10 @@
 				1A1A877B1A3E0297003F6D9A /* AppDelegate.m */,
 				1A1A877D1A3E0297003F6D9A /* ViewController.h */,
 				1A1A877E1A3E0297003F6D9A /* ViewController.m */,
-				1A14C3DD1A40FC7A009B1813 /* AddContributorViewController.h */,
-				1A14C3DE1A40FC7A009B1813 /* AddContributorViewController.m */,
+				1A14C3DD1A40FC7A009B1813 /* ContributorsListViewController.h */,
+				1A14C3DE1A40FC7A009B1813 /* ContributorsListViewController.m */,
+				1ADE5EBC1A422C09007190ED /* AddNewContributorViewController.h */,
+				1ADE5EBD1A422C09007190ED /* AddNewContributorViewController.m */,
 				1A1A87801A3E0297003F6D9A /* Main.storyboard */,
 				1A1A87831A3E0297003F6D9A /* Images.xcassets */,
 				1A1A87851A3E0297003F6D9A /* LaunchScreen.xib */,
@@ -295,7 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A14C3DF1A40FC7A009B1813 /* AddContributorViewController.m in Sources */,
+				1ADE5EBE1A422C09007190ED /* AddNewContributorViewController.m in Sources */,
+				1A14C3DF1A40FC7A009B1813 /* ContributorsListViewController.m in Sources */,
 				1A1A877F1A3E0297003F6D9A /* ViewController.m in Sources */,
 				1A1A877C1A3E0297003F6D9A /* AppDelegate.m in Sources */,
 				1A1A87791A3E0297003F6D9A /* main.m in Sources */,

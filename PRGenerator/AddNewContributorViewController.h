@@ -1,5 +1,5 @@
 //
-//  AddContributorViewController.h
+//  AddNewContributorViewController.h
 //  PRGenerator
 //
 //  Created by Jean-Louis Danielo on 17/12/2014.
@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddContributorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AddNewContributorViewController : UIViewController <UITextFieldDelegate>
 {
     CGFloat screenWidth;
     CGFloat screenHeight;
     
-    NSMutableArray *contributorsList;
+    int direction;
+    int shakes;
 }
 
 @end

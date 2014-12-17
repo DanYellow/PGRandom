@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "RQShineLabel.h"
-#import "AddContributorViewController.h"
+#import "ContributorsListViewController.h"
 
 
 @interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>

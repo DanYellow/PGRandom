@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Jean-Louis Danielo. All rights reserved.
 //
 
-#import "AddContributorViewController.h"
+#import "ContributorsListViewController.h"
 
-@interface AddContributorViewController ()
+@interface ContributorsListViewController ()
 
 @end
 
-@implementation AddContributorViewController
+@implementation ContributorsListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +23,8 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PRGenerator"]]];
     self.edgesForExtendedLayout = UIRectEdgeAll;
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(pushAddNewContributorsView)];
+    
     // Vars init
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     screenWidth = screenRect.size.width;
@@ -30,18 +32,24 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs objectForKey:@"contributors"] == nil) {
-        [prefs setObject:@[@"Pikachu", @"Bulbizarre", @"Carapuce", @"Salamèche"] forKey:@"contributors"];
+        [prefs setObject:[@[@"Pikachu", @"Bulbizarre", @"Carapuce", @"Salamèche"] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] forKey:@"contributors"];
     }
     
     contributorsList = [[NSMutableArray alloc] initWithArray:[prefs objectForKey:@"contributors"]];
     
-    UITableView *contributorsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) style:UITableViewStylePlain];
+    
+    
+    UITableView *contributorsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight - 50) style:UITableViewStylePlain];
     contributorsTableView.delegate = self;
     contributorsTableView.dataSource = self;
+    contributorsTableView.tag = 1;
     contributorsTableView.backgroundColor = [UIColor clearColor];
-    contributorsTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    contributorsTableView.tableFooterView = [UIView new];
     contributorsTableView.allowsMultipleSelectionDuringEditing = NO;
+    contributorsTableView.allowsSelection = NO;
     [self.view addSubview:contributorsTableView];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector: @selector(contributorsListHaveBeenUpdateNotificationEvent) name: @"addNewContributor" object: nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +70,8 @@
     return contributorsList.count;
 }
 
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -77,10 +87,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.backgroundColor = [UIColor colorWithWhite:1 alpha:.15];
         cell.textLabel.textColor = [UIColor whiteColor];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.textLabel.text = [contributorsList objectAtIndex:indexPath.row];
  
     return cell;
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animate {
+    
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,6 +111,34 @@
         [prefs setObject:contributorsList forKey:@"contributors"];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
+}
+
+- (void)pushAddNewContributorsView {
+    //    UITableView *contributorsTableView = (UITableView*)[self.view viewWithTag:1];
+    AddNewContributorViewController *addNewContributorViewController = [AddNewContributorViewController new];
+    addNewContributorViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissModal)];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addNewContributorViewController];
+    [navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                          forBarMetrics:UIBarMetricsDefault];
+    navigationController.navigationBar.shadowImage = [UIImage new];
+    navigationController.navigationBar.translucent = YES;
+    navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+    //    [contributorsTableView setEditing:YES animated:YES];
+}
+
+- (void) dismissModal
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) contributorsListHaveBeenUpdateNotificationEvent
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    contributorsList = [[NSMutableArray alloc] initWithArray:[prefs objectForKey:@"contributors"]];
+    
+    UITableView *contributorsTableView = (UITableView*)[self.view viewWithTag:1];
+    [contributorsTableView reloadData];
 }
 
 @end
